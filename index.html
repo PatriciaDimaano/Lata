@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lata Cakes - Homepage</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        #matcha_div{
+            position: relative;
+        }
+        #matcha_video{
+            width: 100%;
+        }
+        
+        #matcha_caption {
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            font-size: 17pt;
+            text-align: right;
+            color: #f1f1f1;
+            width: 90%;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 4s ease-in-out;
+        }
+        
+        #matcha_caption.show {
+            opacity: 1;
+        }
+        
+        #filler{
+            font-size: 14pt;
+            color: #36322A;
+            margin: 120px 70px;
+            line-height: 200%;
+            opacity: 0;
+            transform: translateY(30px); /* optional slide effect */
+            transition: opacity 1.5s ease, transform 1.5s ease;
+        }
+        
+        #filler.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        #menu_div{
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+        }
+        
+        #banana_video{
+            width: 60%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        #menu{
+            width: 40%;
+            background-color: #36322A;
+            padding: 100px;
+            font-size: 12pt;
+            line-height: 200%;
+        }
+        
+        #menu_button{
+            padding: 20px;
+            background-color: #f1f1f1;
+            color: #36322A;
+            text-decoration: none;
+        }
+        
+        #menu_button:hover, #menu_button:visited{
+            background-color: #AE9A65;
+            color: #f1f1f1;
+            text-decoration: none;
+        }
+        
+        /* MEDIA QUERIES FOR MOBILE RESPONSIVENESS */
+        @media screen and (max-width: 1024px) {
+            #matcha_caption{
+                font-weight: bold;
+            }
+            
+            #matcha_caption, #filler, #menu{
+                font-size: 20pt;
+            }
+            
+            #menu_div{
+            flex-direction: column;
+            }
+        
+            #banana_video{
+                width: 100%;
+            }
+            
+            #filler, #menu{
+                font-size: 15pt;
+            }
+            
+            #menu{
+                width: 100%;
+                padding: 120px 70px;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+    
+<body>
+    <nav>
+        <button id="exit_nav">x</button>
+        <img id="nav_logo" src="images/nav_logo.png" alt="Lata Cakes logo">
+        <ul>
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="customcake.html">Custom Cake</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div id="page_blur">
+        <header>
+            <a href="index.html"><img id="logo" src="images/logo.jpg" alt="Lata Cakes logo"></a>
+            <div id = "navigation">
+                <img id="hamburger" src="images/hamburger.png" alt="menu navigation">
+                <img id="hamburger_hover" src="images/hamburger_hover.png" alt="menu navigation">
+            </div>
+        </header>
+        <main>
+            <div id="matcha_div">
+                <video id="matcha_video" autoplay muted playsinline preload="auto" alt="Raspbery Hoji-Matcha intro video">
+                    <source src="images/matcha_vid.mp4" type="video/mp4">
+                </video>
+                <div id="matcha_caption">
+                    A unique spin on classic sweets designed to satisfy both your sweet tooth and creativity
+                </div>
+            </div>
+            <div id="filler">
+                <p style="margin-top: 0; font-weight: bold;">Every occasion deserves a little
+                sweetness<p>
+                Our tin can cakes are the ideal treat for every
+                occasion worth celebrating
+            </div>
+            <div id="menu_div">
+                <video id="banana_video" autoplay muted playsinline preload="auto" alt="Banana Dulce de Leche intro video">
+                    <source src="images/banana_vid.mp4" type="video/mp4">
+                </video>
+                <div id="menu">
+                    Lata is your ticket to a world of flavors, whether you&apos;re celebrating a special milestone, surprising a loved one, or just in the mood for a scrumptious dessert. From classic favorites like dark chocolate and strawberry cheesecake to exotic creations like raspberry matcha and tiramisu, our menu is a treasure trove of taste sensations. 
+                    <br><br>
+                    <a id="menu_button" href="menu.html">Explore Our Menu</a>
+                </div>
+            </div>
+            <img id="sushi" src="images/sushi1.jpg" alt="Sushi Bake image">
+        </main>
+        <footer>
+            <p id="footer_header">Site Links</p>
+            <p id="footer_links">
+                <a href="index.html">Home</a> | <a href="menu.html">Menu</a> | 
+                <a href="customcake.html">Custom Cake</a> | <a href="aboutus.html">About Us</a> | 
+                <a href="contactus.html">Contact Us</a>
+            </p>
+        </footer>
+    </div>
+    <script>
+        const hamburger = document.getElementById('navigation');
+        const nav = document.querySelector('nav');
+        const pageBlur = document.getElementById('page_blur');
+        const exitBtn = document.getElementById('exit_nav');
+
+        nav.classList.remove('show'); // Initially hidden
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('show');
+            pageBlur.classList.toggle('blurred');
+        });
+
+        exitBtn.addEventListener('click', () => {
+            nav.classList.remove('show');
+            pageBlur.classList.remove('blurred');
+        });
+
+        window.addEventListener('load', () => {
+        document.querySelector('#matcha_caption').classList.add('show');
+        });
+        
+        const filler = document.getElementById('filler');
+
+        const fillerObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    filler.classList.add('visible');
+                    fillerObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        fillerObserver.observe(filler);
+        
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+    </script>
+</body>
+
+</html>

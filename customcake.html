@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <style>
+        #exit_nav{
+            margin: 0;
+            width: auto;
+            height: auto;
+        }
+        
+        main {
+            background-image: url("images/small2.jpg");
+            background-size: cover;
+            background-position-y: -200px;
+            color: #ffffff;
+            line-height: 40px;
+            padding-bottom: 50px;
+        }
+
+        #head {
+            font-size: 40pt;
+            margin: 150px 0 150px 0;
+            text-align: center;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 2s ease, transform 2s ease;
+        }
+        
+        #head.visible{
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        form {
+            margin: 0 200px 0 200px;
+            font-size: 18px;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: left;
+
+        }
+
+        input {
+            height: 30px;
+            width: 100%;
+            background-color: transparent;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            color-scheme: dark;
+        }
+
+        select {
+            height: 40px;
+            width: 100%;
+            background-color: transparent;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+        }
+
+        input:hover,
+        textarea:hover,
+        select:hover {
+            border-color: #AE9A65;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #AE9A65;
+        }
+
+        label {
+            text-align: left;
+        }
+
+        input#date {
+            width: 150px;
+        }
+
+        input[type=submit], input[type=reset],
+        button {
+            background-color: #ffffff;
+            color: #1F1E1E;
+            height: 35px;
+            width: 90px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        input[type=submit]:hover, input[type=reset]:hover,
+        button:hover {
+            background-color: #AE9A65;
+            color: #ffffff;
+
+        }
+        
+        /* MEDIA QUERIES FOR MOBILE RESPONSIVENESS */
+        @media screen and (max-width: 1024px) {
+            #head{
+                transform: none;
+            }
+            
+            form {
+                margin: 0 70px 0 70px;
+                font-size: 27pt;
+            }
+            
+            input {
+                height: 60px;
+                font-size: 27pt;
+                margin: 15px 0px 30px 0px;
+            }
+            
+            input#date {
+                width: 280px;
+            }
+            
+            select {
+                height: 70px;
+                font-size: 27pt;
+                margin: 15px 0px 30px 0px;
+            }
+            
+            input[type=submit], input[type=reset],
+            button {
+                height: 70px;
+                width: 170px;
+                font-size: 27pt;
+            }
+        }
+    </style>
+    <title>Lata Cakes - Custom Cake</title>
+</head>
+
+<body id="container">
+    <nav>
+        <button id="exit_nav">x</button>
+        <img id="nav_logo" src="images/nav_logo.png" alt="Lata Cakes logo">
+        <ul>
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="customcake.html">Custom Cake</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div id="page_blur">
+    <header>
+        <a href="index.html"><img id="logo" src="images/logo.jpg" alt="Lata Cakes logo"></a>
+        <div id = "navigation">
+            <img id="hamburger" src="images/hamburger.png" alt="menu navigation">
+            <img id="hamburger_hover" src="images/hamburger_hover.png" alt="menu navigation">
+        </div>
+    </header>
+    <main>
+        <p id="head">Customize Your Own Cake</p>
+        <form id="custom_form" action="https://formsubmit.co/patriciadimaano.pd@gmail.com" method="post" autocomplete="on">
+            Asterisks&#40;&#42;&#41; indicate required fields.
+            <br><br>
+
+            <label for="cake">Cake Flavor&#42;</label><br>
+            <select name="cake" id="cake" onchange="disable()">
+                <option value disabled selected>Select one</option>
+                <option value="dark_choco">DARK CHOCOLATE LATA CAKE</option>
+                <option value="strawberry_creamcheese">STRAWBERRY CREAM CHEESE LATA CAKE</option>
+                <option value="rasp_matcha">RASPBERRY HOJI-MATCHA LATA CAKE</option>
+                <option value="tiramisu">TIRAMISU LATA CAKE</option>
+                <option value="banana_dulce">BANANA DULCE DE LECHE LATA CAKE</option>
+            </select><br>
+
+            <label for="size">Cake size&#42;</label><br>
+            <select name="size" id="size" required>
+                <option value disabled selected>Select one</option>
+                <option value="large">LARGE (7.19x2.65 inches, good for 6-8 people)</option>
+                <option value="small">SMALL (4x2.50 inches, good for 1-2 people)</option>
+            </select><br>
+
+            <label for="sweetness">Sweetness Level&#42;</label><br>
+            <select name="sweetness" id="sweetness" required>
+                <option value disabled selected>Select one</option>
+                <option value="regular">Regular</option>
+                <option value="less_sweet">Less sweet</option>
+                <option value="sugar_free">Sugar free</option>
+            </select><br>
+
+            <label for="alcohol">Alcohol Content (Only for Tiramisu Lata Cake)&#42;</label><br>
+            <select name="alcohol" id="alcohol" required disabled>
+                <option value disabled selected>Select one</option>
+                <option value="alcoholic">Alcoholic</option>
+                <option value="non_alcoholic">Non-alcoholic</option>
+            </select><br>
+
+            <label for="occassion">Occassion</label><br>
+            <input name="occassion" id="occassion" type="text"><br>
+
+            <label for="date">Date for Pickup&#42;</label><br>
+            <input name="date" id="date" type="date" required><br>
+
+            <h2>Customer Information</h2>
+
+            <label for="fname">First Name&#42;</label><br>
+            <input name="fname" id="fname" type="text" autocomplete="given-name" required><br>
+
+            <label for="lname">Last Name&#42;</label><br>
+            <input name="lname" id="lname" type="text" autocomplete="family-name" required><br>
+
+            <label for="email">Email</label><br>
+            <input name="email" id="email" type="email" autocomplete="email"><br>
+
+            <label for="phonenum">Contact Number&#42;</label><br>
+            <input name="phonenum" id="phonenum" type="tel" autocomplete="tel" required><br><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </main>
+    <footer>
+        <p id="footer_header">Site Links</p>
+        <p id="footer_links">
+            <a href="index.html">Home</a> | <a href="menu.html">Menu</a> | 
+            <a href="customcake.html">Custom Cake</a> | <a href="aboutus.html">About Us</a> | 
+            <a href="contactus.html">Contact Us</a>
+        </p>
+    </footer>
+    </div>
+    <script>
+        const hamburger = document.getElementById('navigation');
+        const nav = document.querySelector('nav');
+        const pageBlur = document.getElementById('page_blur');
+        const exitBtn = document.getElementById('exit_nav');
+
+        nav.classList.remove('show'); // Initially hidden
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('show');
+            pageBlur.classList.toggle('blurred');
+        });
+
+        exitBtn.addEventListener('click', () => {
+            nav.classList.remove('show');
+            pageBlur.classList.remove('blurred');
+        });
+        
+        function disable() {
+            cake_select = document.getElementById("cake");
+            if (cake_select.value != "tiramisu"){
+                document.getElementById("alcohol").disabled = true;
+            }
+            else {
+                document.getElementById("alcohol").disabled = false;
+            }
+        }
+        
+        const descriptions = document.querySelectorAll('#head');
+        const textObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.3 });
+        descriptions.forEach(desc => textObserver.observe(desc));
+        
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+    </script>
+</body>
+
+</html>
