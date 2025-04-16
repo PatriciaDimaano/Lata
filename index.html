@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Lata Cakes - Homepage</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        #matcha_div{
+        /********************* MATCHA SECTION **************************/
+        #matcha_div {
             position: relative;
         }
-        #matcha_video{
+
+        #matcha_video {
             width: 100%;
         }
-        
+
         #matcha_caption {
             position: absolute;
             top: 15px;
@@ -25,91 +27,108 @@
             opacity: 0;
             transition: opacity 4s ease-in-out;
         }
-        
+
         #matcha_caption.show {
             opacity: 1;
         }
-        
-        #filler{
+
+        /********************* FILLER SECTION **************************/
+        #filler {
             font-size: 14pt;
             color: #36322A;
             margin: 120px 70px;
             line-height: 200%;
             opacity: 0;
-            transform: translateY(30px); /* optional slide effect */
+            transform: translateY(30px);
             transition: opacity 1.5s ease, transform 1.5s ease;
         }
-        
+
+        #filler p {
+            margin-top: 0;
+            font-weight: bold;
+        }
+
         #filler.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        #menu_div{
+
+        /*********************** MENU SECTION **************************/
+        #menu_div {
             display: flex;
             flex-direction: row;
-            align-items: stretch;
         }
-        
-        #banana_video{
+
+        #banana_video {
             width: 60%;
             height: 100%;
             object-fit: cover;
         }
-        
-        #menu{
+
+        #menu {
             width: 40%;
             background-color: #36322A;
             padding: 100px;
             font-size: 12pt;
             line-height: 200%;
         }
-        
-        #menu_button{
+
+        #menu_button {
             padding: 20px;
             background-color: #f1f1f1;
             color: #36322A;
             text-decoration: none;
         }
-        
-        #menu_button:hover, #menu_button:visited{
+
+        #menu_button:hover,
+        #menu_button:visited {
             background-color: #AE9A65;
             color: #f1f1f1;
             text-decoration: none;
         }
+
+        /**************************************************************/
+        /**************************************************************/
+        /************** MOBILE SCREEN RESPONSIVENESS ******************/
+        /**************************************************************/
+        /**************************************************************/
         
-        /* MEDIA QUERIES FOR MOBILE RESPONSIVENESS */
         @media screen and (max-width: 1024px) {
-            #matcha_caption{
-                font-weight: bold;
-            }
             
-            #matcha_caption, #filler, #menu{
+            /******************* MATCHA SECTION ***********************/
+            #matcha_caption {
+                font-weight: bold;
                 font-size: 20pt;
             }
             
-            #menu_div{
-            flex-direction: column;
-            }
-        
-            #banana_video{
-                width: 100%;
-            }
-            
-            #filler, #menu{
+            /******************* FILLER SECTION ***********************/
+
+            #filler,
+            #menu {
                 font-size: 15pt;
             }
             
-            #menu{
+            /******************** MENU SECTION ************************/
+
+            #menu_div {
+                flex-direction: column;
+            }
+
+            #banana_video,
+            #menu {
                 width: 100%;
-                padding: 120px 70px;
                 box-sizing: border-box;
+            }
+
+            #menu {
+                padding: 120px 70px;
             }
         }
     </style>
 </head>
-    
+
 <body>
+    <!------------------------- NAVIGATION ---------------------------->
     <nav>
         <button id="exit_nav">x</button>
         <img id="nav_logo" src="images/nav_logo.png" alt="Lata Cakes logo">
@@ -121,57 +140,67 @@
             <li><a href="contactus.html">Contact Us</a></li>
         </ul>
     </nav>
+    
+    <!---- DIV FOR PAGE BLUR TO HIGHLIGHT WEBSITE MENU NAVIGATION ---->
     <div id="page_blur">
+        <!------------------------- HEADER --------------------------->
         <header>
             <a href="index.html"><img id="logo" src="images/logo.jpg" alt="Lata Cakes logo"></a>
-            <div id = "navigation">
+            <div id="navigation">
                 <img id="hamburger" src="images/hamburger.png" alt="menu navigation">
                 <img id="hamburger_hover" src="images/hamburger_hover.png" alt="menu navigation">
             </div>
         </header>
+        
+        <!--------------------- MAIN CONTENT ------------------------->
         <main>
+            <!---------------- MATCHA SECTION ------------------------->
             <div id="matcha_div">
-                <video id="matcha_video" autoplay muted playsinline preload="auto" alt="Raspbery Hoji-Matcha intro video">
+                <video id="matcha_video" autoplay muted playsinline preload="auto">
                     <source src="images/matcha_vid.mp4" type="video/mp4">
                 </video>
                 <div id="matcha_caption">
                     A unique spin on classic sweets designed to satisfy both your sweet tooth and creativity
                 </div>
             </div>
+            <!---------------- FILLER SECTION ------------------------->
             <div id="filler">
-                <p style="margin-top: 0; font-weight: bold;">Every occasion deserves a little
-                sweetness<p>
-                Our tin can cakes are the ideal treat for every
-                occasion worth celebrating
+                <p>Every occasion deserves a little sweetness</p>
+                Our tin can cakes are the ideal treat for every occasion worth celebrating
             </div>
+            <!------------------ MENU SECTION ------------------------->
             <div id="menu_div">
-                <video id="banana_video" autoplay muted playsinline preload="auto" alt="Banana Dulce de Leche intro video">
+                <video id="banana_video" autoplay muted playsinline preload="auto">
                     <source src="images/banana_vid.mp4" type="video/mp4">
                 </video>
                 <div id="menu">
-                    Lata is your ticket to a world of flavors, whether you&apos;re celebrating a special milestone, surprising a loved one, or just in the mood for a scrumptious dessert. From classic favorites like dark chocolate and strawberry cheesecake to exotic creations like raspberry matcha and tiramisu, our menu is a treasure trove of taste sensations. 
+                    Lata is your ticket to a world of flavors, whether you're celebrating a special milestone, surprising a loved one, or just in the mood for a scrumptious dessert. From classic favorites like dark chocolate and strawberry cheesecake to exotic creations like raspberry matcha and tiramisu, our menu is a treasure trove of taste sensations.
                     <br><br>
                     <a id="menu_button" href="menu.html">Explore Our Menu</a>
                 </div>
             </div>
+            <!------------------ SUSHI SECTION ------------------------->
             <img id="sushi" src="images/sushi1.jpg" alt="Sushi Bake image">
         </main>
+        
+        <!------------------------ FOOTER ------------------------------>
         <footer>
             <p id="footer_header">Site Links</p>
             <p id="footer_links">
-                <a href="index.html">Home</a> | <a href="menu.html">Menu</a> | 
-                <a href="customcake.html">Custom Cake</a> | <a href="aboutus.html">About Us</a> | 
+                <a href="index.html">Home</a> | <a href="menu.html">Menu</a> |
+                <a href="customcake.html">Custom Cake</a> | <a href="aboutus.html">About Us</a> |
                 <a href="contactus.html">Contact Us</a>
             </p>
         </footer>
     </div>
+
     <script>
+        // BLUR PAGE WHEN HAMBURGER ICON IS CLICKED TO HIGHLIGHT MENU
+        // NAVIGATION, AND THEN UNBLUR WHEN EXIT BUTTON IS CLICKED
         const hamburger = document.getElementById('navigation');
         const nav = document.querySelector('nav');
         const pageBlur = document.getElementById('page_blur');
         const exitBtn = document.getElementById('exit_nav');
-
-        nav.classList.remove('show'); // Initially hidden
 
         hamburger.addEventListener('click', () => {
             nav.classList.toggle('show');
@@ -182,13 +211,14 @@
             nav.classList.remove('show');
             pageBlur.classList.remove('blurred');
         });
-
-        window.addEventListener('load', () => {
-        document.querySelector('#matcha_caption').classList.add('show');
-        });
         
-        const filler = document.getElementById('filler');
+        // ANIMATE #matcha_caption UPON SCROLLING
+        window.addEventListener('load', () => {
+            document.getElementById('matcha_caption').classList.add('show');
+        });
 
+        // ANIMATE #filler UPON SCROLLING
+        const filler = document.getElementById('filler');
         const fillerObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -197,12 +227,10 @@
                 }
             });
         }, { threshold: 0.5 });
-
         fillerObserver.observe(filler);
-        
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        };
+
+        // GO BACK TO TOP OF THE PAGE WHEN REFRESHED
+        window.onbeforeunload = () => window.scrollTo(0, 0);
     </script>
 </body>
 
