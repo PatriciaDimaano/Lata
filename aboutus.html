@@ -2,13 +2,21 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <style type="text/css">
-        main{
-            background-color: rgba(255,255,255,0.5);
+    <meta charset="UTF-8">
+    <title>Lata Cakes - About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /************ MAIN SECTION ADJUSTMENTS & HEADLINE ************/
+        main {
+            background-color: rgba(255, 255, 255, 0.5);
             color: #36322A;
+            font-family: 'Courier New', Courier, monospace;
         }
-        
+
+        .main_div {
+            margin: 30px;
+        }
+
         .head {
             font-size: 40pt;
             margin: 100px auto;
@@ -17,208 +25,217 @@
             transform: translateX(50px);
             transition: opacity 2s ease, transform 2s ease;
         }
-        
-        .head.visible{
+
+        .head.visible {
             opacity: 1;
             transform: translateX(0);
         }
-        
-        .main_div {
-            margin: 30px 30px 50px 30px;
-        }
 
+        /******************** ABOUT US SECTION ***********************/
+        ol {
+            margin: 30px 0;
+        }
+        
+        .aboutheader {
+            color: #AE9A65;
+            list-style: none;
+            background: url("images/wheat.png") no-repeat left top;
+            background-size: 40px;
+        }
+        
+        h2 {
+            margin: 50px;
+        }
+        
         #chefs {
-            margin: 0px 30px 30px 0px;
+            margin: 0 30px 30px 0;
             float: left;
-            border: solid 10px;
-            border-color: #AE9A65;
+            border: 10px solid #AE9A65;
             width: 340px;
             height: auto;
         }
-        
-        ol {
-            margin: 30px 0px 30px 0px;
-        }
 
-        h2{
-            margin: 50px 50px 30px 50px;
-        }
-        
-        #desc {
+        #desc,
+        #chef_desc {
             margin: auto 50px;
             color: #1F1E1E;
         }
+
+        /**************************************************************/
+        /**************************************************************/
+        /************** MOBILE SCREEN RESPONSIVENESS ******************/
+        /**************************************************************/
+        /**************************************************************/
         
-        #couple{
-            color: #AE9A65;
-            font-size: 30pt;
-            font-weight: bold;
-            text-align: center;
-            margin: 90px 0px 20px 0px;
-        }
-        
-        #chef_desc{
-                margin: auto 50px;
-            }
-        
-        @media screen and (max-width: 1024px){
-            main{
+        @media screen and (max-width: 1024px) {
+            /********** MAIN SECTION ADJUSTMENTS & HEADLINE ***********/
+            main {
                 font-size: 23pt;
             }
             
+            .head {
+                transform: none;
+            }
+            
+            /***************** ABOUT US SECTION ***********************/
             #chefs {
                 margin: 30px auto;
                 width: 70%;
                 float: none;
                 display: block;
             }
-            .head{
-                transform: none;
-            }
         }
     </style>
-    <meta charset="UTF-8">
-    <title>Lata Cakes - About Us</title>
 </head>
 
 <body>
+    <!------------------------- NAVIGATION ---------------------------->
     <nav>
         <button id="exit_nav">x</button>
         <img id="nav_logo" src="images/nav_logo.png" alt="Lata Cakes logo">
         <ul>
-            <li><a href="index.html">Home Page</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="customcake.html">Custom Cake</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
+          <li><a href="index.html">Home Page</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="customcake.html">Custom Cake</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
         </ul>
     </nav>
+    
+    <!---- DIV FOR PAGE BLUR TO HIGHLIGHT WEBSITE MENU NAVIGATION ---->
     <div id="page_blur">
+        <!------------------------- HEADER --------------------------->
         <header>
             <a href="index.html"><img id="logo" src="images/logo.jpg" alt="Lata Cakes logo"></a>
-            <div id = "navigation">
+            <div id="navigation">
                 <img id="hamburger" src="images/hamburger.png" alt="menu navigation">
                 <img id="hamburger_hover" src="images/hamburger_hover.png" alt="menu navigation">
             </div>
         </header>
+
+        <!--------------------- MAIN CONTENT ------------------------->
         <main>
             <p class="head">About Us</p>
+            <!------------------ ABOUT LATA SECTION------------------->
             <div class="main_div">
-            <ol>
-                <li class="aboutheader">
-                    <h2>What is Lata?</h2>
-
-                <p id="desc">
-                    <em>Lata</em> &#40;pronounced as luh-tah&#41; is a Spanish&#47;Tagalog word that translates to &quot;tin
-                    can&quot;. <em>Lata</em> can be used to store and contain an assortment of things, such as household
-                    items, goodies, and gifts. Now, imagine that you open a tin can and see a glimpse of something that
-                    appears to be wonderful. You take a scoop and reveal all the different layers and textures you did not
-                    expect. You take a bite, and you're forever changed.
-                </p>
-    </li>
-                <li class="aboutheader">
-                    <h2>Why Lata Cakes?</h2>
-
-                <p id="desc">
-                    Lata Cakes is different from any other cakes you've tried. Aside from our unique concept, we only use
-                    the finest organic ingredients available on the market for each of our cakes. While our cakes might look
-                    sinful, they are surprisingly not very sweet. On top of that, the sugar level of our cakes can be
-                    modified upon request. We are all for sustainability and our food&#45;grade tin cans are reusable, too!
-                    How awesome is that?
-                    </p>
-    </li>
+                <ol>
+                    <li class="aboutheader">
+                        <h2>What is Lata?</h2>
+                        <p id="desc">
+                            <em>Lata</em> &#40;pronounced as luh-tah&#41; is a Spanish&#47;Tagalog word that translates to &quot;tin
+                            can&quot;. <em>Lata</em> can be used to store and contain an assortment of things, such as household
+                            items, goodies, and gifts. Now, imagine that you open a tin can and see a glimpse of something that
+                            appears to be wonderful. You take a scoop and reveal all the different layers and textures you did not
+                            expect. You take a bite, and you're forever changed.
+                        </p>
+                    </li>
+                    <li class="aboutheader">
+                        <h2>Why Lata Cakes?</h2>
+                        <p id="desc">
+                            Lata Cakes is different from any other cakes you've tried. Aside from our unique concept, we only use
+                            the finest organic ingredients available on the market for each of our cakes. While our cakes might look
+                            sinful, they are surprisingly not very sweet. On top of that, the sugar level of our cakes can be
+                            modified upon request. We are all for sustainability and our food&#45;grade tin cans are reusable, too!
+                            How awesome is that?
+                        </p>
+                    </li>
                     <li class="aboutheader">
                         <h2>Unique cakes with unique flavors</h2>
-
-                <p id="desc">
-                    Our gourmet cakes are available in a variety of carefully curated and chosen flavors. We provide
-                    traditional flavors that everyone knows and loves, as well as flavors that are closer to our Asian
-                    roots. We also take advantage of fruits and ingredients that are in season and we turn them into
-                    captivating flavors to provide our customers the best experience. Enjoy!
-                    </p>
-    </li>
+                        <p id="desc">
+                            Our gourmet cakes are available in a variety of carefully curated and chosen flavors. We provide
+                            traditional flavors that everyone knows and loves, as well as flavors that are closer to our Asian
+                            roots. We also take advantage of fruits and ingredients that are in season and we turn them into
+                            captivating flavors to provide our customers the best experience. Enjoy!
+                         </p>
+                    </li>
                     <li class="aboutheader">
                         <h2>We want to share the magic</h2>
-
-                <p id="desc">
-                    Our mission is to share the magical experience we had when we took the first bite of Lata Cakes. And it
-                    still gets us every time! We want everybody to experience our delightful concoction with the finest
-                    ingredients at affordable prices, so they can be enjoyed on any occasion, or no occasion (We don&apos;t
-                    judge).
-                </p>
-                </li>
-            </ol>
+                        <p id="desc">
+                            Our mission is to share the magical experience we had when we took the first bite of Lata Cakes. And it
+                            still gets us every time! We want everybody to experience our delightful concoction with the finest
+                            ingredients at affordable prices, so they can be enjoyed on any occasion, or no occasion (We don&apos;t
+                            judge).
+                        </p>
+                    </li>
+                </ol>
             </div>
-
+            <!---------------- ABOUT THE CHEFS SECTION---------------->
             <div class="main_div">
                 <p class="head">The Couple Behind the Magic</p>
                 <img id="chefs" src="images/chefs.JPEG" alt="chefs image">
                 <p id="chef_desc">
-                    Meet the culinary duo, Patricia Dimaano and Quyen Nguyen, whose passion for food and love for each other
-                    come together to bring delightful
-                    confectionary creations. With a shared commitment to crafting memorable dishes and desserts, this dynamic
-                    couple aims to bring unique flavors and
-                    creativity to the kitchen.
-                    <br><br>
-                    Patricia, a Filipino immigrant, loves baking at an early age. Her culinary journey began when she started
-                    assisting her auntie bake an assortment
-                    of desserts to sell at their bakery located in the bustling streets of Manila. From there, she developed a
-                    deep appreciation for baking and got
-                    inspired to start a business of her own. During special occassions and family gatherings, Patricia loves to
-                    bake for her loved ones. Her creations
-                    pay tribute to her family and her childhood.
-                    <br><br>
-                    Quyen, on the other hand, emigrated from Vietnam. Having lived in a country known for its rich culinary
-                    culture, he got exposed to unique, exotic
-                    dishes and flavors at a very young age. Contrary to Patricia's love for baking, Quyen is a maestro of savory
-                    delights. He loves to cook and draws
-                    inspiration from his mother, from whom he learned his meticulous preparation and cooking techniques.
-                    <br><br>
-                    Together, Patricia and Quyen form a harmonious culinary balance based on the mixture of their own
-                    backgrounds and upbringing. Their creations are
-                    not merely confections; they are edible stories about their Asian roots and their journey as a couple.
+                Meet the culinary duo, Patricia Dimaano and Quyen Nguyen, whose passion for food and love for each other
+                come together to bring delightful
+                confectionary creations. With a shared commitment to crafting memorable dishes and desserts, this dynamic
+                couple aims to bring unique flavors and
+                creativity to the kitchen.
+                <br><br>
+                Patricia, a Filipino immigrant, loves baking at an early age. Her culinary journey began when she started
+                assisting her auntie bake an assortment
+                of desserts to sell at their bakery located in the bustling streets of Manila. From there, she developed a
+                deep appreciation for baking and got
+                inspired to start a business of her own. During special occassions and family gatherings, Patricia loves to
+                bake for her loved ones. Her creations
+                pay tribute to her family and her childhood.
+                <br><br>
+                Quyen, on the other hand, emigrated from Vietnam. Having lived in a country known for its rich culinary
+                culture, he got exposed to unique, exotic
+                dishes and flavors at a very young age. Contrary to Patricia's love for baking, Quyen is a maestro of savory
+                delights. He loves to cook and draws
+                inspiration from his mother, from whom he learned his meticulous preparation and cooking techniques.
+                <br><br>
+                Together, Patricia and Quyen form a harmonious culinary balance based on the mixture of their own
+                backgrounds and upbringing. Their creations are
+                not merely confections; they are edible stories about their Asian roots and their journey as a couple.
                 </p>
             </div>
         </main>
+        
+        <!------------------------ FOOTER ------------------------------>
         <footer>
-            <p id="footer_header">Site Links</p>
-            <p id="footer_links">
-                <a href="index.html">Home</a> | <a href="menu.html">Menu</a> | 
-                <a href="customcake.html">Custom Cake</a> | <a href="aboutus.html">About Us</a> | 
+              <p id="footer_header">Site Links</p>
+              <p id="footer_links">
+                <a href="index.html">Home</a> | <a href="menu.html">Menu</a> |
+                <a href="customcake.html">Custom Cake</a> | <a href="aboutus.html">About Us</a> |
                 <a href="contactus.html">Contact Us</a>
-            </p>
+              </p>
         </footer>
     </div>
+    
     <script>
+        // BLUR PAGE WHEN HAMBURGER ICON IS CLICKED TO HIGHLIGHT MENU
+        // NAVIGATION, AND THEN UNBLUR WHEN EXIT BUTTON IS CLICKED
         const hamburger = document.getElementById('navigation');
         const nav = document.querySelector('nav');
         const pageBlur = document.getElementById('page_blur');
         const exitBtn = document.getElementById('exit_nav');
 
-        nav.classList.remove('show'); // Initially hidden
+        nav.classList.remove('show');
 
         hamburger.addEventListener('click', () => {
-            nav.classList.toggle('show');
-            pageBlur.classList.toggle('blurred');
+          nav.classList.toggle('show');
+          pageBlur.classList.toggle('blurred');
         });
 
         exitBtn.addEventListener('click', () => {
-            nav.classList.remove('show');
-            pageBlur.classList.remove('blurred');
+          nav.classList.remove('show');
+          pageBlur.classList.remove('blurred');
         });
-        
+
+        // ANIMATE HEADLINES UPON SCROLLING
         const descriptions = document.querySelectorAll('.head');
         const textObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
         }, { threshold: 0.3 });
         descriptions.forEach(desc => textObserver.observe(desc));
         
+        // GO BACK TO TOP OF THE PAGE WHEN REFRESHED
         window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
+          window.scrollTo(0, 0);
         };
     </script>
 </body>
