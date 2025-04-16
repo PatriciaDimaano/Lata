@@ -2,46 +2,48 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Lata Cakes - Menu</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
+        /******************* MENU TABLE STRUCTURE *********************/
         #menu-pad {
             width: 100%;
             background-color: #D4CFC4;
             float: left;
-            padding: 0px;
+            padding: 0;
             box-sizing: border-box;
         }
-        
+
         #menu-table {
             width: 100%;
             table-layout: fixed;
-            padding: 0;
             background-color: #D4CFC4;
             border-spacing: 0;
         }
-
-        #menu-table tr {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
+        
+        /******************** MENU TABLE HEADER ***********************/
         #menu-table th {
             font-size: 24pt;
-            height: auto;
             background-color: #1F1E1E;
             color: #ffffff;
             padding: 10px;
             width: 100%;
         }
-        
-        .header_logo{
+
+        .header_logo {
             width: 50px;
             height: 50px;
         }
-
+        
+        /********************** MENU TABLE ROW ************************/
+        #menu-table tr {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        /********************** MENU TABLE DATA ***********************/
         #menu-table td {
             width: 25%;
             box-sizing: border-box;
@@ -54,8 +56,8 @@
         #menu-table td.image {
             padding: 0;
         }
-        
-        #menu-table td.image img{
+
+        #menu-table td.image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -64,91 +66,81 @@
             transform: scale(0.95);
             transition: opacity 1.5s ease;
         }
-        
+
         #menu-table td.image img.visible {
             opacity: 1;
             transform: scale(1);
         }
 
-        #menu-table td.descleft{
+        #menu-table td.descleft {
             background-color: #AE9A65;
             color: #ffffff;
         }
-        
-        #menu-table td.descleft p{
+
+        #menu-table td.descleft p,
+        #menu-table td.descright p {
             opacity: 0;
+            transition: opacity 1.5s ease, transform 1.5s ease;
+        }
+
+        #menu-table td.descleft p {
             transform: translateX(-30px);
-            transition: opacity 1.5s ease, transform 1.5s ease;
         }
-        
-        #menu-table td.descright p{
-            opacity: 0;
+
+        #menu-table td.descright p {
             transform: translateX(30px);
-            transition: opacity 1.5s ease, transform 1.5s ease;
         }
-        
-        #menu-table td.descleft p.visible, #menu-table td.descright p.visible {
+
+        #menu-table td.descleft p.visible,
+        #menu-table td.descright p.visible {
             opacity: 1;
             transform: translateX(0);
         }
+
+        /**************************************************************/
+        /**************************************************************/
+        /************** MOBILE SCREEN RESPONSIVENESS ******************/
+        /**************************************************************/
+        /**************************************************************/
         
-        /* MEDIA QUERIES FOR MOBILE RESPONSIVENESS */
         @media screen and (max-width: 1024px) {
-            #menu-pad {
-                width: 100% !important;
-                margin: 0 auto;
-            }
-    
-            #menu-table {
-                width: 100% !important;
-            }
-            
-            #menu-table th{
+            /****************** MENU TABLE HEADER *********************/
+            #menu-table th {
                 font-size: 37pt;
             }
-            
-            .header_logo{
+
+            .header_logo {
                 width: 70px;
                 height: 70px;
             }
-    
-            /* Change table to 2 columns instead of 4 */
-            #menu-table tr {
-                display: flex;
-                flex-wrap: wrap;
-            }
-
+            
+            /******************* MENU TABLE DATA **********************/
             #menu-table td {
                 width: 50%;
                 font-size: 27pt;
             }
-            
-            /* Prevents underlined descriptions from breaking onto a separate line */
-            #menu-table td.descleft strong u, #menu-table td.descright strong u {
-                display: inline; /* Ensures title stays on the same line as text */
-                white-space: normal; /* Prevents line breaks */
-            }
 
-            /* Ensure all menu descriptions have exactly the same font size */
-            #menu-table td.descleft, #menu-table td.descright {
-                min-height: 200px; /* Ensures same height for all description boxes */
+            #menu-table td.descleft,
+            #menu-table td.descright {
+                min-height: 200px;
                 display: flex;
-                flex-direction: column; /* Keeps title and description together */
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 text-align: center;
             }
-            
-            /* Prevents underlined descriptions from breaking onto a separate line */
-            #menu-table td.descleft strong u, #menu-table td.descright strong u {
-                display: inline; /* Ensures title stays on the same line as text */
-                white-space: normal; /* Prevents line breaks */
+
+            #menu-table td.descleft strong u,
+            #menu-table td.descright strong u {
+                display: inline;
+                white-space: normal;
             }
         }
     </style>
 </head>
 
 <body>
+    <!------------------------- NAVIGATION ---------------------------->
     <nav>
         <button id="exit_nav">x</button>
         <img id="nav_logo" src="images/nav_logo.png" alt="Lata Cakes logo">
@@ -160,43 +152,51 @@
             <li><a href="contactus.html">Contact Us</a></li>
         </ul>
     </nav>
+
+    <!---- DIV FOR PAGE BLUR TO HIGHLIGHT WEBSITE MENU NAVIGATION ---->
     <div id="page_blur">
+        <!------------------------- HEADER --------------------------->
         <header>
             <a href="index.html"><img id="logo" src="images/logo.jpg" alt="Lata Cakes logo"></a>
-            <div id = "navigation">
+            <div id="navigation">
                 <img id="hamburger" src="images/hamburger.png" alt="menu navigation">
                 <img id="hamburger_hover" src="images/hamburger_hover.png" alt="menu navigation">
             </div>
         </header>
+        
+        <!----------------------- MENU TABLE -------------------------->
         <main id="menu-pad">
             <table id="menu-table">
+                <!----------------- CAKES HEADER ---------------------->
                 <tr>
                     <th colspan="4"><img class="header_logo" src="images/cake.PNG" alt="tin cake icon"><br>Cakes
                     </th>
                 </tr>
+                <!----------------- 1ST CAKES ROW --------------------->
                 <tr>
                     <td class="image"><img src="images/darkchoco.JPEG" alt="Dark Chocolate Lata cake image">
                     </td>
-                    <td class="descright"><p><strong><u>Dark Chocolate Lata Cake</u></strong><br><br>5 different textures of
+                    <td class="descright"><p><strong>Dark Chocolate Lata Cake</strong><br><br>5 different textures of
                         rich dark chocolate all in one can. Layers of moist dark chocolate chiffon cake, dark chocolate
                         pudding, dark chocolate ganache, thin chocolate hard layer sheet, and dark cocoa dusting. Our
                         best-seller and definitely addicting.</p>
                     </td>
                     <td class="image"><img src="images/strawberry.JPEG" alt="Strawberry Cream Cheese Lata cake image">
                     </td>
-                    <td class="descright"><p><strong><u>Strawberry Cream Cheese Lata Cake</u></strong><br><br>Layers of buttery
+                    <td class="descright"><p><strong>Strawberry Cream Cheese Lata Cake</strong><br><br>Layers of buttery
                         graham crust, madagascar vanilla chiffon cake, strawberry compote, cream cheese mousse, topped with
                         pillowy vanilla cake crumbs. Sweet and tart just like strawberry yogurt!</p>
                     </td>
                 </tr>
+                <!----------------- 2ND CAKES ROW --------------------->
                 <tr>
-                    <td class="descleft"><p><strong><u>Raspberry Hoji-Matcha Lata Cake</u></strong><br><br>Layers of hojicha
+                    <td class="descleft"><p><strong>Raspberry Hoji-Matcha Lata Cake</strong><br><br>Layers of hojicha
                         sponge cake, mascarpone cheese with fresh raspberries, and top-grade matcha mousse. All topped with
                         a white chocolate matcha thin hard layer sheet and matcha dusting. Light, fresh, and earthy.</p>
                     </td>
                     <td class="image"><img src="images/matcha.JPEG" alt="Raspberry Hoji-Matcha Lata cake image">
                     </td>
-                    <td class="descleft"><p><strong><u>Tiramisu Lata Cake</u></strong><br><br>Our take on the classic Italian
+                    <td class="descleft"><p><strong>Tiramisu Lata Cake</strong><br><br>Our take on the classic Italian
                         dessert. Madagascar vanilla sponge cake soaked in espresso, layered with creamy mascarpone cheese,
                         and dusted with rich cocoa powder. Available in both alcoholic and non-alcoholic versions so
                         everybody can enjoy!</p>
@@ -204,34 +204,38 @@
                     <td class="image"><img src="images/tiramisu.JPEG" alt="Tiramisu Lata cake image">
                     </td>
                 </tr>
+                <!----------------- 3RD CAKES ROW --------------------->
                 <tr>
-                    <td class="descright"><p><strong><u>Banana Dulce de Leche Lata Cake</u></strong><br><br>Layers of dulce de
+                    <td class="descright"><p><strong>Banana Dulce de Leche Lata Cake</strong><br><br>Layers of dulce de
                         leche with fresh bananas, banana chiffon cake, our Lola's secret salted caramel sauce, and cream
                         cheese mousse. Topped with banana cake crumbs with walnuts. Contains nuts.</p>
                     </td>
                     <td class="image"><img src="images/banana.JPEG" alt="Banana Dulce de Leche Lata cake image">
                     </td>
                 </tr>
+                <!----------------- SPECIALS HEADER ------------------->
                 <tr>
                     <th colspan="4"><img class="header_logo" src="images/specials.PNG" alt="specials icon"><br>Specials
                     </th>
                 </tr>
+                <!----------------- 1ST SPECIALS ROW ------------------>
                 <tr>
-                    <td class="descleft"><p><strong><u>Ube Cheese Muffin</u></strong><br><br>A classic yet unique Filipino
+                    <td class="descleft"><p><strong>Ube Cheese Muffin</strong><br><br>A classic yet unique Filipino
                         flavor combination. A Filipino purple sweet potato muffin with sharp cheddar cheese swirls. A
                         perfect coffee pairing.</p>
                     </td>
                     <td class="image"><img src="images/ube.JPEG" alt="Ube Cheese muffin image">
                     </td>
-                    <td class="descleft"><p><strong><u>Pork Lumpia</u></strong><br><br>Our Papa's specialty that brings the
+                    <td class="descleft"><p><strong>Pork Lumpia</strong><br><br>Our Papa's specialty that brings the
                         flavors of the Philippines to your plate. Savory and aromatic flavors rolled in a crispy pastry
                         wrapper. Truly the life of the party.</p>
                     </td>
                     <td class="image"><img src="images/lumpia.JPEG" alt="Lumpia image">
                     </td>
                 </tr>
+                <!----------------- 2ND SPECIALS ROW ------------------>
                 <tr>
-                    <td class="descright"><p><strong><u>Sushi Bake</u></strong><br><br>A delectable, modern twist on
+                    <td class="descright"><p><strong>Sushi Bake</strong><br><br>A delectable, modern twist on
                         traditional Japanese sushi. Layers of cucumber, avocado, and mango topped with tuna and crab salad,
                         furikake, masago and sesame seeds baked in a casserole. Paired with nori sheets for wrapping adding
                         to a fun dining experience.</p>
@@ -241,22 +245,25 @@
                 </tr>
             </table>
         </main>
+        
+        <!------------------------ FOOTER ------------------------------>
         <footer>
             <p id="footer_header">Site Links</p>
             <p id="footer_links">
-                <a href="index.html">Home</a> | <a href="menu.html">Menu</a> | 
-                <a href="customcake.html">Custom Cake</a> | <a href="aboutus.html">About Us</a> | 
+                <a href="index.html">Home</a> | <a href="menu.html">Menu</a> |
+                <a href="customcake.html">Custom Cake</a> | <a href="aboutus.html">About Us</a> |
                 <a href="contactus.html">Contact Us</a>
             </p>
         </footer>
     </div>
+
     <script>
+        // BLUR PAGE WHEN HAMBURGER ICON IS CLICKED TO HIGHLIGHT MENU
+        // NAVIGATION, AND THEN UNBLUR WHEN EXIT BUTTON IS CLICKED
         const hamburger = document.getElementById('navigation');
         const nav = document.querySelector('nav');
         const pageBlur = document.getElementById('page_blur');
         const exitBtn = document.getElementById('exit_nav');
-
-        nav.classList.remove('show'); // Initially hidden
 
         hamburger.addEventListener('click', () => {
             nav.classList.toggle('show');
@@ -267,9 +274,9 @@
             nav.classList.remove('show');
             pageBlur.classList.remove('blurred');
         });
-        
-        const images = document.querySelectorAll('#menu-table td.image img');
 
+        // ANIMATE MENU TABLE IMAGES UPON SCROLLING
+        const images = document.querySelectorAll('#menu-table td.image img');
         const imageObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -277,12 +284,9 @@
                 }
             });
         }, { threshold: 0.3 });
+        images.forEach(img => imageObserver.observe(img));
 
-        images.forEach(img => {
-            imageObserver.observe(img);
-        });
-        
-        // Animate text descriptions
+        // ANIMATE MENU TABLE DESCRIPTIONS UPON SCROLLING
         const descriptions = document.querySelectorAll('#menu-table td.descleft p, #menu-table td.descright p');
         const textObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -292,10 +296,9 @@
             });
         }, { threshold: 0.3 });
         descriptions.forEach(desc => textObserver.observe(desc));
-        
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        };
+
+        // GO BACK TO TOP OF THE PAGE WHEN REFRESHED
+        window.onbeforeunload = () => window.scrollTo(0, 0);
     </script>
 </body>
 
