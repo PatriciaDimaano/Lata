@@ -2,15 +2,11 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
+    <title>Lata Cakes - Custom Cake</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        #exit_nav{
-            margin: 0;
-            width: auto;
-            height: auto;
-        }
-        
+        /************ MAIN SECTION ADJUSTMENTS & HEADLINE ************/
         main {
             background-image: url("images/small2.jpg");
             background-size: cover;
@@ -22,50 +18,55 @@
 
         #head {
             font-size: 40pt;
-            margin: 150px 0 150px 0;
+            margin: 150px 0;
             text-align: center;
             opacity: 0;
             transform: translateX(50px);
             transition: opacity 2s ease, transform 2s ease;
         }
-        
-        #head.visible{
+
+        #head.visible {
             opacity: 1;
             transform: translateX(0);
         }
 
+        /**************** CAKE CUSTOMIZATION FORM ********************/
         form {
-            margin: 0 200px 0 200px;
+            margin: 0 200px;
             font-size: 18px;
             font-family: 'Courier New', Courier, monospace;
             text-align: left;
-
         }
 
-        input {
-            height: 30px;
+        label {
+            text-align: left;
+        }
+
+        input,
+        select {
             width: 100%;
             background-color: transparent;
             font-family: 'Courier New', Courier, monospace;
             font-size: 18px;
             color: #ffffff;
             border: 2px solid #ffffff;
+        }
+
+        input {
+            height: 30px;
             color-scheme: dark;
         }
 
         select {
             height: 40px;
-            width: 100%;
-            background-color: transparent;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 18px;
-            color: #ffffff;
-            border: 2px solid #ffffff;
         }
 
         input:hover,
         textarea:hover,
-        select:hover {
+        select:hover,
+        input:focus,
+        textarea:focus,
+        select:focus {
             border-color: #AE9A65;
         }
 
@@ -73,19 +74,15 @@
         textarea:focus,
         select:focus {
             outline: none;
-            border-color: #AE9A65;
         }
 
-        label {
-            text-align: left;
-        }
-
-        input#date {
+        #date {
             width: 150px;
         }
-
-        input[type=submit], input[type=reset],
-        button {
+        
+        /*********************** FORM BUTTONS ************************/
+        input[type="submit"],
+        input[type="reset"] {
             background-color: #ffffff;
             color: #1F1E1E;
             height: 35px;
@@ -95,56 +92,59 @@
             margin-right: 10px;
         }
 
-        button {
-            margin-top: 10px;
-        }
-
-        input[type=submit]:hover, input[type=reset]:hover,
-        button:hover {
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
             background-color: #AE9A65;
             color: #ffffff;
-
         }
+
+        /**************************************************************/
+        /**************************************************************/
+        /************** MOBILE SCREEN RESPONSIVENESS ******************/
+        /**************************************************************/
+        /**************************************************************/
         
-        /* MEDIA QUERIES FOR MOBILE RESPONSIVENESS */
         @media screen and (max-width: 1024px) {
-            #head{
+            /****************** HEADLINE ADJUSTMENT *******************/
+            #head {
                 transform: none;
             }
-            
+
+            /**************** CAKE CUSTOMIZATION FORM *****************/
             form {
-                margin: 0 70px 0 70px;
+                margin: 0 70px;
                 font-size: 27pt;
             }
-            
+
             input {
                 height: 60px;
                 font-size: 27pt;
-                margin: 15px 0px 30px 0px;
+                margin: 15px 0 30px 0;
             }
-            
-            input#date {
-                width: 280px;
+
+            #date {
+                width: 300px;
             }
-            
+
             select {
                 height: 70px;
                 font-size: 27pt;
-                margin: 15px 0px 30px 0px;
+                margin: 15px 0 30px 0;
             }
             
-            input[type=submit], input[type=reset],
-            button {
+            /********************* FORM BUTTONS ***********************/
+            input[type="submit"],
+            input[type="reset"] {
                 height: 70px;
                 width: 170px;
                 font-size: 27pt;
             }
         }
     </style>
-    <title>Lata Cakes - Custom Cake</title>
 </head>
 
 <body id="container">
+    <!------------------------- NAVIGATION ---------------------------->
     <nav>
         <button id="exit_nav">x</button>
         <img id="nav_logo" src="images/nav_logo.png" alt="Lata Cakes logo">
@@ -156,92 +156,106 @@
             <li><a href="contactus.html">Contact Us</a></li>
         </ul>
     </nav>
+
+    <!---- DIV FOR PAGE BLUR TO HIGHLIGHT WEBSITE MENU NAVIGATION ---->
     <div id="page_blur">
-    <header>
-        <a href="index.html"><img id="logo" src="images/logo.jpg" alt="Lata Cakes logo"></a>
-        <div id = "navigation">
-            <img id="hamburger" src="images/hamburger.png" alt="menu navigation">
-            <img id="hamburger_hover" src="images/hamburger_hover.png" alt="menu navigation">
-        </div>
-    </header>
-    <main>
-        <p id="head">Customize Your Own Cake</p>
-        <form id="custom_form" action="https://formsubmit.co/patriciadimaano.pd@gmail.com" method="post" autocomplete="on">
-            Asterisks&#40;&#42;&#41; indicate required fields.
-            <br><br>
+        <!------------------------- HEADER --------------------------->
+        <header>
+            <a href="index.html"><img id="logo" src="images/logo.jpg" alt="Lata Cakes logo"></a>
+            <div id="navigation">
+                <img id="hamburger" src="images/hamburger.png" alt="menu navigation">
+                <img id="hamburger_hover" src="images/hamburger_hover.png" alt="menu navigation">
+            </div>
+        </header>
 
-            <label for="cake">Cake Flavor&#42;</label><br>
-            <select name="cake" id="cake" onchange="disable()">
-                <option value disabled selected>Select one</option>
-                <option value="dark_choco">DARK CHOCOLATE LATA CAKE</option>
-                <option value="strawberry_creamcheese">STRAWBERRY CREAM CHEESE LATA CAKE</option>
-                <option value="rasp_matcha">RASPBERRY HOJI-MATCHA LATA CAKE</option>
-                <option value="tiramisu">TIRAMISU LATA CAKE</option>
-                <option value="banana_dulce">BANANA DULCE DE LECHE LATA CAKE</option>
-            </select><br>
+        <main>
+            <p id="head">Customize Your Own Cake</p>
+            <!--------- CAKE CUSTOMIZATION FORM VIA FORMSUBMIT-------->
+            <form id="custom_form" action="https://formsubmit.co/patriciadimaano.pd@gmail.com" method="post" autocomplete="on">
+                Custom cakes must be placed at least a week before pickup date.
+                <br>
+                Asterisks&#40;&#42;&#41; indicate required fields.
+                <br><br>
+                <!--------------- CUSTOMIZATION INFO ----------------->
+                <label for="cake">Cake Flavor&#42;</label><br>
+                <select name="cake" id="cake" onchange="disable()">
+                    <option value disabled selected>Select one</option>
+                    <option value="dark_choco">DARK CHOCOLATE LATA CAKE</option>
+                    <option value="strawberry_creamcheese">STRAWBERRY CREAM CHEESE LATA CAKE</option>
+                    <option value="rasp_matcha">RASPBERRY HOJI-MATCHA LATA CAKE</option>
+                    <option value="tiramisu">TIRAMISU LATA CAKE</option>
+                    <option value="banana_dulce">BANANA DULCE DE LECHE LATA CAKE</option>
+                </select><br>
 
-            <label for="size">Cake size&#42;</label><br>
-            <select name="size" id="size" required>
-                <option value disabled selected>Select one</option>
-                <option value="large">LARGE (7.19x2.65 inches, good for 6-8 people)</option>
-                <option value="small">SMALL (4x2.50 inches, good for 1-2 people)</option>
-            </select><br>
+                <label for="size">Cake size&#42;</label><br>
+                <select name="size" id="size" required>
+                    <option value disabled selected>Select one</option>
+                    <option value="large">LARGE (7.19x2.65 inches, good for 6-8 people)</option>
+                    <option value="small">SMALL (4x2.50 inches, good for 1-2 people)</option>
+                </select><br>
 
-            <label for="sweetness">Sweetness Level&#42;</label><br>
-            <select name="sweetness" id="sweetness" required>
-                <option value disabled selected>Select one</option>
-                <option value="regular">Regular</option>
-                <option value="less_sweet">Less sweet</option>
-                <option value="sugar_free">Sugar free</option>
-            </select><br>
+                <label for="sweetness">Sweetness Level&#42;</label><br>
+                <select name="sweetness" id="sweetness" required>
+                    <option value disabled selected>Select one</option>
+                    <option value="regular">Regular</option>
+                    <option value="less_sweet">Less sweet</option>
+                    <option value="sugar_free">Sugar free</option>
+                </select><br>
 
-            <label for="alcohol">Alcohol Content (Only for Tiramisu Lata Cake)&#42;</label><br>
-            <select name="alcohol" id="alcohol" required disabled>
-                <option value disabled selected>Select one</option>
-                <option value="alcoholic">Alcoholic</option>
-                <option value="non_alcoholic">Non-alcoholic</option>
-            </select><br>
+                <label for="alcohol">Alcohol Content (Only for Tiramisu Lata Cake)&#42;</label><br>
+                <select name="alcohol" id="alcohol" required disabled>
+                    <option value disabled selected>Select one</option>
+                    <option value="alcoholic">Alcoholic</option>
+                    <option value="non_alcoholic">Non-alcoholic</option>
+                </select><br>
 
-            <label for="occassion">Occassion</label><br>
-            <input name="occassion" id="occassion" type="text"><br>
+                <label for="occassion">Occassion</label><br>
+                <input name="occassion" id="occassion" type="text"><br>
 
-            <label for="date">Date for Pickup&#42;</label><br>
-            <input name="date" id="date" type="date" required><br>
+                <label for="date">Date for Pickup&#42;</label><br>
+                <input name="date" id="date" type="date" required><br>
+                
+                <!------------------ CUSTOMER INFO -------------------->
+                <h2>Customer Information</h2>
 
-            <h2>Customer Information</h2>
+                <label for="fname">First Name&#42;</label><br>
+                <input name="fname" id="fname" type="text" autocomplete="given-name" required><br>
 
-            <label for="fname">First Name&#42;</label><br>
-            <input name="fname" id="fname" type="text" autocomplete="given-name" required><br>
+                <label for="lname">Last Name&#42;</label><br>
+                <input name="lname" id="lname" type="text" autocomplete="family-name" required><br>
 
-            <label for="lname">Last Name&#42;</label><br>
-            <input name="lname" id="lname" type="text" autocomplete="family-name" required><br>
+                <label for="email">Email</label><br>
+                <input name="email" id="email" type="email" autocomplete="email"><br>
 
-            <label for="email">Email</label><br>
-            <input name="email" id="email" type="email" autocomplete="email"><br>
+                <label for="phonenum">Contact Number&#42;</label><br>
+                <input name="phonenum" id="phonenum" type="tel" autocomplete="tel" required><br><br>
+                
+                <!------------------- FORM BUTTONS -------------------->
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+        </main>
 
-            <label for="phonenum">Contact Number&#42;</label><br>
-            <input name="phonenum" id="phonenum" type="tel" autocomplete="tel" required><br><br>
-
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
-        </form>
-    </main>
-    <footer>
-        <p id="footer_header">Site Links</p>
-        <p id="footer_links">
-            <a href="index.html">Home</a> | <a href="menu.html">Menu</a> | 
-            <a href="customcake.html">Custom Cake</a> | <a href="aboutus.html">About Us</a> | 
-            <a href="contactus.html">Contact Us</a>
-        </p>
-    </footer>
+        <!------------------------ FOOTER ------------------------------>
+        <footer>
+            <p id="footer_header">Site Links</p>
+            <p id="footer_links">
+                <a href="index.html">Home</a> | <a href="menu.html">Menu</a> |
+                <a href="customcake.html">Custom Cake</a> | <a href="aboutus.html">About Us</a> |
+                <a href="contactus.html">Contact Us</a>
+            </p>
+        </footer>
     </div>
+
     <script>
+        // BLUR PAGE WHEN HAMBURGER ICON IS CLICKED TO HIGHLIGHT MENU
+        // NAVIGATION, AND THEN UNBLUR WHEN EXIT BUTTON IS CLICKED
         const hamburger = document.getElementById('navigation');
         const nav = document.querySelector('nav');
         const pageBlur = document.getElementById('page_blur');
         const exitBtn = document.getElementById('exit_nav');
 
-        nav.classList.remove('show'); // Initially hidden
+        nav.classList.remove('show');
 
         hamburger.addEventListener('click', () => {
             nav.classList.toggle('show');
@@ -253,16 +267,14 @@
             pageBlur.classList.remove('blurred');
         });
         
+        // ENABLE ALCOHOL CONTENT SELECTION IF TIRAMISU CAKE IS SELECTED
         function disable() {
-            cake_select = document.getElementById("cake");
-            if (cake_select.value != "tiramisu"){
-                document.getElementById("alcohol").disabled = true;
-            }
-            else {
-                document.getElementById("alcohol").disabled = false;
-            }
+            const cakeSelect = document.getElementById("cake");
+            const alcoholSelect = document.getElementById("alcohol");
+            alcoholSelect.disabled = cakeSelect.value !== "tiramisu";
         }
-        
+
+        // ANIMATE HEADLINE UPON SCROLLING
         const descriptions = document.querySelectorAll('#head');
         const textObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -272,10 +284,9 @@
             });
         }, { threshold: 0.3 });
         descriptions.forEach(desc => textObserver.observe(desc));
-        
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        };
+
+        // GO BACK TO TOP OF THE PAGE WHEN REFRESHED
+        window.onbeforeunload = () => window.scrollTo(0, 0);
     </script>
 </body>
 
